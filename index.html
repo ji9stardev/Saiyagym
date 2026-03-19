@@ -5,17 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaiyaGym</title>
     <style>
+        /* Regla de oro para evitar que los elementos se desborden */
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Regla global: Ninguna imagen puede ser más ancha que la pantalla */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #1b1918;
             color: white;
+            overflow-x: hidden; /* Evita el scroll horizontal */
         }
         header {
             background-color: rgb(231, 77, 0);
             color: rgb(0, 0, 0);
-            padding: 10px 10px;
+            padding: 15px 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -23,25 +35,14 @@
             animation: fadeInUp 1s ease-out;
         }
         header img {
-            max-width: 58px;
-            height: auto;
-            margin-right: 20px;
+            max-width: 60px;
+            margin-right: 15px;
         }
         header .title-image {
-            max-width: 130px;
-            height: auto;
-        }
-        header h1, header p {
-            font-size: 25px;
-            margin: 0;
-        }
-        header div {
-            display: flex;
-            flex-direction: column;
+            max-width: 140px;
         }
         nav {
             background-color: #000000;
-            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -61,7 +62,8 @@
         }
         section {
             padding: 20px;
-            margin: 20px;
+            margin: 20px auto;
+            max-width: 1200px; /* Centra el contenido en PC */
             background-color: #1d1a1a;
             color: white;
             border-radius: 8px;
@@ -84,10 +86,8 @@
             color: white;
             text-align: center;
             padding: 10px;
-            position: fixed;
-            bottom: 0;
+            /* Quitamos position fixed en móvil para que no estorbe */
             width: 100%;
-            animation: fadeInUp 1s ease-out;
             z-index: 10;
         }
         .gallery {
@@ -95,23 +95,19 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
-            animation: fadeInUp 1s ease-out;
         }
         .gallery img {
-            width: 32%;
-            height: auto;
+            width: 31%; /* 3 por fila en PC */
             border-radius: 8px;
             object-fit: cover;
-            animation: fadeIn 1s forwards;
         }
         .bienvenida-gallery {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             gap: 20px;
         }
         .bienvenida-gallery img {
-            width: 32%;
-            height: auto;
+            width: 31%;
             border-radius: 8px;
         }
         .planes {
@@ -128,16 +124,11 @@
         #direccion h2 {
             margin-bottom: 20px;
         }
-        #mapa {
-            width: 100%;
-            height: 400px;
-            border-radius: 8px;
-        }
         .social-icons {
             margin-top: 20px;
             display: flex;
             align-items: center;
-            animation: fadeInUp 1s ease-out;
+            justify-content: center;
         }
         .social-icons a {
             margin-right: 10px;
@@ -146,7 +137,6 @@
         .social-icons img {
             width: 30px;
             height: 30px;
-            animation: fadeIn 1s forwards;
         }
         .social-icons span {
             margin-right: 20px;
@@ -156,12 +146,11 @@
         }
 
         /* =========================================
-           MODO CELULAR (Diseño Responsivo)
+           MODO CELULAR (Diseño Responsivo Reforzado)
            ========================================= */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                text-align: center;
             }
             header img {
                 margin-right: 0;
@@ -171,22 +160,31 @@
                 flex-wrap: wrap;
             }
             nav a {
-                padding: 10px;
-                font-size: 15px;
-                width: 25%;
-                box-sizing: border-box;
+                padding: 10px 5px;
+                font-size: 14px;
+                width: 33.33%; /* Acomoda 3 botones por fila en el menú */
             }
-            .gallery img, .bienvenida-gallery img {
-                width: 90%; 
-                margin-bottom: 15px;
+            section {
+                margin: 10px;
+                padding: 15px;
             }
-            .bienvenida-gallery {
+            
+            /* Forzamos a que las galerías sean una columna apilada hacia abajo */
+            .bienvenida-gallery, .gallery {
                 flex-direction: column;
                 align-items: center;
             }
-            .planes img {
-                width: 95%;
-                height: auto;
+            .bienvenida-gallery img, .gallery img {
+                width: 100%; /* Las fotos ocuparán todo el ancho de la pantalla */
+                margin-bottom: 15px;
+            }
+            
+            .social-icons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .social-icons span {
+                margin-right: 0;
             }
         }
     </style>
@@ -248,15 +246,11 @@
         <div class="social-icons">
             <a href="https://wa.me/56954176212" target="_blank">
                 <img src="wsp.png" alt="WhatsApp">
-            </a>
-            <a href="https://wa.me/56954176212" target="_blank">
                 <span>+569 5417 6212</span>
             </a>
             
             <a href="https://www.instagram.com/saiyagym.training" target="_blank">
                 <img src="instagram.png" alt="Instagram">
-            </a>
-            <a href="https://www.instagram.com/saiyagym.training" target="_blank">
                 <span>@saiyagym.training</span>
             </a>
         </div>
@@ -265,7 +259,7 @@
             <h2>Dirección</h2>
             <p>Visítanos en:</p>
             <p>Los Copihues 364, Cumpeo, Río Claro, Maule</p>
-            <iframe src="https://www.google.com/maps/embed?pb=" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </section>
 
