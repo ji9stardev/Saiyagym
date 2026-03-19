@@ -141,7 +141,7 @@
         }
         .social-icons a {
             margin-right: 10px;
-            text-decoration: none; /* Quitamos la línea de los enlaces */
+            text-decoration: none; 
         }
         .social-icons img {
             width: 30px;
@@ -153,6 +153,41 @@
             font-size: 16px;
             color: white;
             align-self: center;
+        }
+
+        /* =========================================
+           MODO CELULAR (Diseño Responsivo)
+           ========================================= */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            nav {
+                flex-wrap: wrap;
+            }
+            nav a {
+                padding: 10px;
+                font-size: 15px;
+                width: 25%;
+                box-sizing: border-box;
+            }
+            .gallery img, .bienvenida-gallery img {
+                width: 90%; 
+                margin-bottom: 15px;
+            }
+            .bienvenida-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+            .planes img {
+                width: 95%;
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -230,7 +265,7 @@
             <h2>Dirección</h2>
             <p>Visítanos en:</p>
             <p>Los Copihues 364, Cumpeo, Río Claro, Maule</p>
-            <iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </section>
 
