@@ -22,7 +22,7 @@
             padding: 0;
             background-color: #1b1918;
             color: white;
-            overflow-x: hidden; /* Evita el scroll horizontal */
+            overflow-x: hidden; 
         }
         header {
             background-color: rgb(231, 77, 0);
@@ -63,7 +63,7 @@
         section {
             padding: 20px;
             margin: 20px auto;
-            max-width: 1200px; /* Centra el contenido en PC */
+            max-width: 1200px; 
             background-color: #1d1a1a;
             color: white;
             border-radius: 8px;
@@ -86,10 +86,16 @@
             color: white;
             text-align: center;
             padding: 10px;
-            /* Quitamos position fixed en móvil para que no estorbe */
             width: 100%;
             z-index: 10;
         }
+        
+        /* ELIMINAMOS EL MARGEN INVISIBLE DEL TEXTO DEL FOOTER */
+        footer p {
+            margin: 0;
+            font-size: 15px;
+        }
+
         .gallery {
             display: flex;
             flex-wrap: wrap;
@@ -97,7 +103,7 @@
             justify-content: center;
         }
         .gallery img {
-            width: 31%; /* 3 por fila en PC */
+            width: 31%; 
             border-radius: 8px;
             object-fit: cover;
         }
@@ -146,15 +152,20 @@
         }
 
         /* =========================================
-           MODO CELULAR (Diseño Responsivo Reforzado)
+           MODO CELULAR (Ajustes de espacio naranjo)
            ========================================= */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
+                padding: 10px 5px; /* Encabezado naranjo más delgado */
             }
             header img {
                 margin-right: 0;
-                margin-bottom: 10px;
+                margin-bottom: 5px; 
+                max-width: 45px; /* Logo más chico en celular */
+            }
+            header .title-image {
+                max-width: 110px; /* Título un poco más chico en celular */
             }
             nav {
                 flex-wrap: wrap;
@@ -162,29 +173,33 @@
             nav a {
                 padding: 10px 5px;
                 font-size: 14px;
-                width: 33.33%; /* Acomoda 3 botones por fila en el menú */
+                width: 33.33%; 
             }
             section {
                 margin: 10px;
                 padding: 15px;
             }
-            
-            /* Forzamos a que las galerías sean una columna apilada hacia abajo */
             .bienvenida-gallery, .gallery {
                 flex-direction: column;
                 align-items: center;
             }
             .bienvenida-gallery img, .gallery img {
-                width: 100%; /* Las fotos ocuparán todo el ancho de la pantalla */
+                width: 100%; 
                 margin-bottom: 15px;
             }
-            
             .social-icons {
                 flex-direction: column;
                 gap: 15px;
             }
             .social-icons span {
                 margin-right: 0;
+            }
+            
+            footer {
+                padding: 8px; /* Footer naranjo más delgado */
+            }
+            footer p {
+                font-size: 12px; /* Letra más pequeña para no ocupar tanta altura */
             }
         }
     </style>
