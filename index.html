@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaiyaGym</title>
     <style>
+        /* =========================================
+           IMPORTAR FUENTE DE DRAGON BALL
+           ========================================= */
+        @font-face {
+            font-family: 'DragonBall';
+            src: url('saiyan.ttf') format('truetype');
+        }
+
         /* Regla de oro para evitar que los elementos se desborden */
         * {
             box-sizing: border-box;
@@ -41,6 +49,8 @@
         header .title-image {
             max-width: 140px;
         }
+        
+        /* === MENÚ DE NAVEGACIÓN === */
         nav {
             background-color: #000000;
             display: flex;
@@ -49,6 +59,9 @@
             animation: fadeInUp 1s ease-out;
         }
         nav a {
+            font-family: 'DragonBall', Arial, sans-serif; /* <-- Aplicamos la fuente aquí */
+            font-size: 22px; /* La hacemos un poco más grande porque esta fuente suele ser pequeña */
+            letter-spacing: 1px; /* Separamos un poquito las letras */
             color: white;
             padding: 14px 20px;
             text-decoration: none;
@@ -60,6 +73,16 @@
             color: black;
             transform: scale(1.1);
         }
+
+        /* === TÍTULOS DE SECCIONES === */
+        h2 {
+            font-family: 'DragonBall', Arial, sans-serif; /* <-- También a los títulos */
+            font-size: 35px;
+            letter-spacing: 2px;
+            color: rgb(231, 77, 0); /* Les damos color naranjo para que resalten */
+            text-align: center;
+        }
+
         section {
             padding: 20px;
             margin: 20px auto;
@@ -151,27 +174,27 @@
         }
 
         /* =========================================
-           MODO CELULAR (Ajustes de encabezado delgado)
+           MODO CELULAR 
            ========================================= */
         @media (max-width: 768px) {
             header {
-                flex-direction: row; /* <--- Clave: Mantiene logo y título lado a lado */
-                padding: 5px 10px; /* <--- Reducimos el colchón naranjo al mínimo */
+                flex-direction: row; 
+                padding: 5px 10px; 
             }
             header img {
-                margin-right: 10px; /* Espacio entre el monito y las letras */
+                margin-right: 10px; 
                 margin-bottom: 0; 
-                max-width: 45px; /* Logo más chiquito */
+                max-width: 45px; 
             }
             header .title-image {
-                max-width: 120px; /* Título un poco más chiquito */
+                max-width: 120px; 
             }
             nav {
                 flex-wrap: wrap;
             }
             nav a {
                 padding: 10px 5px;
-                font-size: 14px;
+                font-size: 16px; /* Ajustado para la nueva fuente */
                 width: 33.33%; 
             }
             section {
