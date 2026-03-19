@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaiyaGym</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1b1918;  /* Fondo negro para toda la página */
+            color: white;  /* El color de texto será blanco para mejor visibilidad */
+        }
+        header {
+            background-color: rgb(231, 77, 0);
+            color: rgb(0, 0, 0);
+            padding: 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centra el contenido horizontalmente */
+            position: relative;
+            animation: fadeInUp 1s ease-out; /* Animación de desvanecimiento y desplazamiento */
+        }
+        header img {
+            max-width: 58px;
+            height: auto;
+            margin-right: 20px;
+        }
+        header .title-image {
+            max-width: 130px;  /* Tamaño de la imagen del título */
+            height: auto;
+        }
+        header h1, header p {
+            font-size: 25px;
+            margin: 0;
+        }
+        header div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Barra de navegación centrada */
+        nav {
+            background-color: #000000;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInUp 1s ease-out; /* Animación de desvanecimiento y desplazamiento */
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #1d1a1a;  /* Fondo negro para las secciones */
+            color: white;  /* El texto en blanco para las secciones */
+            border-radius: 8px;
+            opacity: 0;
+            animation: fadeIn 1s forwards; /* Animación de desvanecimiento */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            background-color: rgb(231, 77, 0);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            animation: fadeInUp 1s ease-out; /* Animación de desvanecimiento y desplazamiento */
+        }
+
+        /* Estilo para la galería (imágenes en fila) */
+        .gallery {
+            display: flex;  /* Usamos flexbox para alinear las imágenes */
+            flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
+            gap: 20px;  /* Espacio entre las imágenes */
+            justify-content: center; /* Centra las imágenes */
+            animation: fadeInUp 1s ease-out; /* Animación de desvanecimiento y desplazamiento */
+        }
+
+        .gallery img {
+            width: 32%;  /* Cada imagen ocupará aproximadamente un 1/3 del ancho */
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;  /* Asegura que las imágenes se ajusten bien */
+            animation: fadeIn 1s forwards; /* Animación de desvanecimiento */
+        }
+
+        /* Estilo para las imágenes de la sección Bienvenida */
+        .bienvenida-gallery {
+            display: flex;  /* Usamos flexbox para alinear las imágenes */
+            justify-content: space-between;  /* Alinea las imágenes con espacio entre ellas */
+            gap: 20px;  /* Espacio entre las imágenes */
+        }
+
+        .bienvenida-gallery img {
+            width: 32%;  /* Cada imagen ocupará aproximadamente un 1/3 del ancho */
+            height: auto;
+            border-radius: 8px;
+        }
+        /* Estilo para la imagen en la sección de Planes */
+        .planes {
+            display: flex;
+            justify-content: center; /* Centra la imagen */
+        }
+
+        #direccion {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        #direccion h2 {
+            margin-bottom: 20px;
+        }
+
+        #mapa {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+        }
+
+        /* Estilo para los iconos de redes sociales */
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            animation: fadeInUp 1s ease-out; /* Animación de desvanecimiento y desplazamiento */
+        }
+
+        .social-icons a {
+            margin-right: 10px;  /* Espacio entre los iconos y los textos */
+        }
+
+        .social-icons img {
+            width: 30px;  /* Reducimos el tamaño de los iconos */
+            height: 30px;  /* Mantenemos la relación de aspecto proporcional */
+            animation: fadeIn 1s forwards; /* Animación de desvanecimiento */
+        }
+
+        .social-icons span {
+            margin-right: 20px;  /* Espacio entre los textos y los iconos */
+            font-size: 16px;
+            color: white;  /* Color del texto */
+            align-self: center;  /* Centra el texto verticalmente */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <!-- Logo de la página -->
+        <img src="logosaiyagym.png" alt="Logo del Gimnasio">
+
+        <!-- Imagen del título al lado del logo -->
+        <img src="TITULOLOGO.jpg" alt="Título de la página" class="title-image">
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#planes">Planes</a>
+        <a href="#productos">Productos</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#direccion">Dirección</a>
+    </nav>
+
+    <!-- Sección de Inicio -->
+    <section id="inicio">        
+        <!-- Galería en la sección de bienvenida -->
+        <div class="bienvenida-gallery">
+            <img src="bienvenida3.jpg" alt="Bienvenida 1">
+            <img src="bienvenidos2.jpg" alt="Bienvenida 2">
+            <img src="bienvenida1.jpg" alt="Bienvenida 3">
+        </div>
+    </section>
+
+    <!-- Sección de Planes (con imagen reducida y centrada) -->
+    <section id="planes">
+        <h2>Planes</h2>
+        <div class="planes">
+            <img src="planes1.jpeg" alt="Plan 1">
+        </div>
+    </section>
+    <section id="galeria">
+        <h2>Galería</h2>
+        <div class="gallery">
+            <img src="Galeria1.jpg" alt="Gimnasio 1">
+            <img src="Galeria2.jpg" alt="Gimnasio 2">
+            <img src="Galeria3.jpg" alt="Gimnasio 3">
+        </div>
+
+    <!-- Sección de Productos -->
+    <section id="productos">
+        <h2>Productos</h2>
+
+        <!-- Galería de productos (disposición 2x3) -->
+        <div class="gallery">
+            <img src="producto1.jpg" alt="Producto 1">
+            <img src="producto2.jpg" alt="Producto 2">
+            <img src="producto3.jpg" alt="Producto 3">
+            <img src="producto4.jpg" alt="Producto 4">
+            <img src="Produco5.jpg" alt="Producto 5">
+            <img src="producto6.jpg" alt="Producto 6">
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+
+        <!-- Iconos de redes sociales -->
+        <div class="social-icons">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/56954176212" target="_blank">
+                <img src="wsp.png" alt="WhatsApp">
+            </a>
+            <a href="https://wa.me/56954176212" target="_blank">
+                <span>+569 5417 6212</span> <!-- Número de WhatsApp al lado del icono -->
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/saiyagym.training" target="_blank">
+                <img src="instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.instagram.com/saiyagym.training" target="_blank">
+                <span>@saiyagym.training</span> <!-- Nombre de Instagram al lado del icono -->
+        </div>
+
+        <!-- Sección de Dirección y Mapa -->
+        <section id="direccion">
+            <h2>Dirección</h2>
+            <p>Visítanos en:</p>
+            <p>Los Copihues 364, Cumpeo, Río Claro, Maule</p>
+            <!-- Incrustamos el mapa de Google Maps -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1628.3726272522797!2d-71.26456692594033!3d-35.287459458411256!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9665a9dd437ffab5%3A0x838aaa86bd1a05e6!2sGimnasio%20SaiyaGym!5e0!3m2!1ses-419!2scl!4v1759723053249!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 SAIYAGYM SPA. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
