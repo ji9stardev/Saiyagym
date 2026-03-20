@@ -56,7 +56,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap; /* Permite que el menú se acomode si son muchos botones */
+            flex-wrap: wrap; 
             animation: fadeInUp 1s ease-out;
         }
         nav a {
@@ -64,7 +64,7 @@
             font-size: 22px;
             letter-spacing: 1px;
             color: white;
-            padding: 14px 15px; /* Reduje un poco el padding para que quepa el nuevo botón */
+            padding: 14px 15px; 
             text-decoration: none;
             text-align: center;
             transition: all 0.3s ease;
@@ -140,10 +140,20 @@
             border-radius: 8px;
         }
         
-        /* Centrado de la imagen en Planes y Horario */
+        /* ===================================================
+           AJUSTE DE TAMAÑO: PLANES Y HORARIO (ESCRITORIO)
+           =================================================== */
         .planes, .horario {
             display: flex;
-            justify-content: center;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center;
+        }
+
+        .planes img, .horario img {
+            width: 70%; /* <--- ACHICAMOS LAS IMÁGENES AL 70% EN PC */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra suave para que resalten */
         }
         
         #direccion {
@@ -214,9 +224,11 @@
                 margin-bottom: 15px;
             }
             
-            /* Asegura que la imagen del horario también encaje en celulares */
+            /* ===================================================
+               AJUSTE DE TAMAÑO: PLANES Y HORARIO (MÓVIL)
+               =================================================== */
             .planes img, .horario img {
-                width: 95%;
+                width: 80%; /* <--- ACHICAMOS LAS IMÁGENES AL 80% EN MÓVIL */
                 height: auto;
             }
 
@@ -247,7 +259,8 @@
     <nav>
         <a href="#inicio">Inicio</a>
         <a href="#planes">Planes</a>
-        <a href="#horario">Horario</a> <a href="#productos">Productos</a>
+        <a href="#horario">Horario</a>
+        <a href="#productos">Productos</a>
         <a href="#galeria">Galería</a>
         <a href="#contacto">Contacto</a>
         <a href="#direccion">Dirección</a>
@@ -264,7 +277,7 @@
     <section id="planes">
         <h2>Planes</h2>
         <div class="planes">
-            <img src="planes1.jpg" alt="Plan 1">
+            <img src="planes1.jpeg" alt="Plan 1">
         </div>
     </section>
 
