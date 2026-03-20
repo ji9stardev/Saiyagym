@@ -56,14 +56,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap; /* Permite que el menú se acomode si son muchos botones */
             animation: fadeInUp 1s ease-out;
         }
         nav a {
             font-family: 'DragonBall', Arial, sans-serif;
-            font-size: 22px; 
-            letter-spacing: 1px; 
+            font-size: 22px;
+            letter-spacing: 1px;
             color: white;
-            padding: 14px 20px;
+            padding: 14px 15px; /* Reduje un poco el padding para que quepa el nuevo botón */
             text-decoration: none;
             text-align: center;
             transition: all 0.3s ease;
@@ -76,10 +77,10 @@
 
         /* === TÍTULOS DE SECCIONES === */
         h2 {
-            font-family: 'DragonBall', Arial, sans-serif; 
+            font-family: 'DragonBall', Arial, sans-serif;
             font-size: 35px;
             letter-spacing: 2px;
-            color: rgb(231, 77, 0); 
+            color: rgb(231, 77, 0);
             text-align: center;
         }
 
@@ -138,10 +139,13 @@
             width: 31%;
             border-radius: 8px;
         }
-        .planes {
+        
+        /* Centrado de la imagen en Planes y Horario */
+        .planes, .horario {
             display: flex;
             justify-content: center;
         }
+        
         #direccion {
             display: flex;
             flex-direction: column;
@@ -209,6 +213,13 @@
                 width: 100%; 
                 margin-bottom: 15px;
             }
+            
+            /* Asegura que la imagen del horario también encaje en celulares */
+            .planes img, .horario img {
+                width: 95%;
+                height: auto;
+            }
+
             .social-icons {
                 flex-direction: column;
                 gap: 15px;
@@ -236,7 +247,7 @@
     <nav>
         <a href="#inicio">Inicio</a>
         <a href="#planes">Planes</a>
-        <a href="#productos">Productos</a>
+        <a href="#horario">Horario</a> <a href="#productos">Productos</a>
         <a href="#galeria">Galería</a>
         <a href="#contacto">Contacto</a>
         <a href="#direccion">Dirección</a>
@@ -254,6 +265,13 @@
         <h2>Planes</h2>
         <div class="planes">
             <img src="planes1.jpeg" alt="Plan 1">
+        </div>
+    </section>
+
+    <section id="horario">
+        <h2>Horario</h2>
+        <div class="horario">
+            <img src="horario.jpg" alt="Horarios del Gimnasio">
         </div>
     </section>
 
@@ -296,7 +314,7 @@
             <h2>Dirección</h2>
             <p>Visítanos en:</p>
             <p>Los Copihues 364, Cumpeo, Río Claro, Maule</p>
-            <iframe src="https://maps.google.com/maps?q=Los+Copihues+364,+Cumpeo,+Río+Claro,+Maule&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </section>
 
